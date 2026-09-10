@@ -1,80 +1,216 @@
-# WoS Native Excel Exporter
+<p align="center">
+  <strong>English</strong> · <a href="README.zh-CN.md">简体中文</a>
+</p>
 
-这是可独立运行的 Node.js 程序：由 Playwright 操作可见 Chromium 中的 WoS 网页，执行检索并点击 Export → Excel，不依赖 GPT、油猴、内部请求重放或 TXT 转换。项目包含检索、网页原生下载、断点续传及合并去重所需的全部代码。
+<p align="center">
+  <img src="docs/assets/hero.drawio.png" alt="WoS Native Excel Exporter — Native exports. Repeatable runs." width="100%">
+</p>
 
-## 环境与启动
+<p align="center">
+  <strong>Web of Science Core Collection → native Excel → one deduplicated workbook.</strong><br>
+  A standalone Playwright tool for literature metadata collection.
+</p>
 
-需要 Node.js 22 或更新版本、Playwright配套Chromium浏览器，以及当前网络可访问的 WoS Core Collection 订阅权限。程序默认操作英文界面；其他界面语言尚未适配。
+<p align="center">
+  <a href="#quick-start">Quick start</a> ·
+  <a href="#how-it-works">Workflow</a> ·
+  <a href="#configure-a-search">Configuration</a> ·
+  <a href="#outputs">Outputs</a> ·
+  <a href="#verified-workflow">Verification</a>
+</p>
 
-在本目录运行：
+---
+
+## Overview
+
+**Automate the export you would perform yourself.** This tool opens a visible Chromium browser, runs your search queries, selects the complete set of export fields, and clicks **Export → Excel** in WoS. It saves the original downloads, checks each batch, and merges completed search sets by their unique WoS identifiers (UTs).
+
+No GPT session, userscript, internal API replay, or TXT-to-Excel conversion is involved.
+
+| Native by design | Built for repeat runs | Traceable results |
+| :--- | :--- | :--- |
+| Original XLS/XLSX downloads | Configurable search sets and batch sizes | Original batches retained |
+| Native column names and order | Resume saved batches in a valid session | UT-to-search-set membership |
+| References and funding fields included | Human handoff for login or verification | Record-level source and conflict details |
+
+## Quick start
+
+**Requirements:** Node.js **22+**, the Playwright-managed Chromium browser, a desktop session, and access to **Web of Science Core Collection** through your subscription or institution.
+
+The website must use its **English interface**. The documentation is bilingual; terminal messages are currently in Chinese. The repository is private, so cloning requires repository access.
+
+### 1. Install
 
 ```sh
+git clone https://github.com/JYao-Chen/wos-native-excel-exporter.git
+cd wos-native-excel-exporter
 npm ci
 npx playwright install chromium
-node src/export.cjs --config examples/wearsteel.json --out output/wearsteel-001
 ```
 
-`examples/wearsteel.json` 保存耐磨钢2026-09-04精准正式版的9个完整展开检索式：P1–P8及相关合金对照。与之前相同，不改变词项、文献类型、年份范围或语言范围；不使用另一个会话的 #集合编号。换项目时复制该文件并替换 `queries` 即可。
+### 2. Run the included search strategy
 
-配置格式：
+```sh
+npm start -- --config examples/wearsteel.json --out output/wearsteel-001
+```
+
+The browser opens visibly. The included configuration runs **nine search sets** from the wear-resistant steel literature strategy: P1–P8 and a related-alloy comparison set. It is a complete collection task, not a short demonstration query.
+
+### 3. Find your results
+
+Open `output/wearsteel-001/WoS-native-merged.xlsx` after the task completes. Original downloads remain in `output/wearsteel-001/raw/`.
+
+Use a **new output directory** for a new collection. To continue an interrupted run, use the same configuration and output directory with `--resume`.
+
+## How it works
+
+<p align="center">
+  <img src="docs/assets/workflow-en.drawio.png" alt="Search configuration → visible WoS browser → native Excel batches → validation and UT merge. Login or verification pauses for human action; saved batches support resume." width="100%">
+</p>
+
+1. **Search.** Submit complete query expressions to WoS Core Collection and read the actual result count.
+2. **Export.** Set each record range and reselect all four custom field groups **for every batch**; WoS can reset these selections.
+3. **Check.** Confirm that each download is a real Excel file with the expected row count, required fields, and unique UTs.
+4. **Merge.** Once all sets are complete, deduplicate by exact UT and save search-set membership separately.
+
+Zero-result searches are recorded as such. A timeout, login screen, or server error is **not** treated as zero results.
+
+## Configure a search
+
+Copy [the included configuration](examples/wearsteel.json) and replace its `queries` for a new topic. For example:
 
 ```json
 {
   "url": "https://webofscience.clarivate.cn/wos/woscc/advanced-search",
   "batchSize": 1000,
   "delayMs": 3000,
-  "queries": [{"id": "P1", "name": "材料论文", "query": "TS=(\"wear-resistant steel*\") AND DT=(Article OR Review OR \"Proceedings Paper\")"}]
+  "queries": [
+    {
+      "id": "P1",
+      "name": "Wear-resistant steel",
+      "query": "TS=(\"wear-resistant steel*\") AND DT=(Article OR Review OR \"Proceedings Paper\")"
+    }
+  ]
 }
 ```
 
-默认使用独立的持久化浏览器目录 `~/.local/share/wos-native-exporter/profile`，不读取或复制日常 Chrome 的 Cookie，不需要关闭日常浏览器。该目录保存本机登录状态，不应上传或分享。使用 `--profile` 可以指定其他独立目录；同一目录勿同时运行两个程序。
+| Setting | Meaning |
+| :--- | :--- |
+| `url` | Core Collection advanced search on `webofscience.clarivate.cn` or `www.webofscience.com` |
+| `batchSize` | Records per batch; integer **1–1000**, also checked against the website's displayed limit |
+| `delayMs` | Pause after a saved batch; at least **1000 ms**, default **3000 ms** |
+| `queries[].id` | Unique set identifier: letters, numbers, hyphens, or underscores; starts with a letter or number |
+| `queries[].name` | Optional readable label |
+| `queries[].query` | Complete WoS query expression; session-dependent references such as `#1 AND #2` are rejected |
 
-网页若要求登录或验证，程序保留已完成批次并暂停；在可见浏览器人工完成，再到终端按回车，以原命令加 `--resume` 续传。无人值守执行可加 `--non-interactive`，失败后直接保存状态并退出；仍需人工处理登录或验证。
+There is no additional post-search filtering. Express your document types, years, and other scope constraints in the query itself. Downloads run **sequentially**, not in parallel.
 
-高级检索页明确显示502/503/504服务器错误时，最多等待后重载两次；自定义字段菜单未加载时，在尚未下载的前提下重载原结果页重试一次。不对登录、验证或其他错误盲目重试。
+<details>
+<summary><strong>Command-line options</strong></summary>
 
-## 原生字段与下载
+| Option | Purpose |
+| :--- | :--- |
+| `--config <file>` | Required. Search configuration JSON |
+| `--out <directory>` | Required. Output directory for this run |
+| `--resume` | Recheck saved files and continue the same task |
+| `--profile <directory>` | Use a separate persistent browser profile |
+| `--non-interactive` | Exit on failure without waiting for terminal input; this is **not** headless mode |
+| `--help` | Show command usage |
 
-- 每批重新打开导出窗口，选择 Records from，填写起止范围，并核对控件实际值及网站上限。
-- 每批重新选中自定义字段的四个分组及子项，包括参考文献、摘要、关键词、机构、基金等。不能沿用上一批的勾选状态，WoS会重置。
-- 在点击 Export 前监听下载事件；下载原始 XLS/XLSX 二进制，不重构、不换扩展名。
-- 校验真实 Excel、条数、完整记录字段、UT 和跨批重叠后保存进度。
-- 只有全部集合完成才合并。零结果保留检索记录，不把超时、错误页面或验证页面当成0。
-- 合并仅按完全相同的 UT 去重，保留首次出现的完整记录及原生列名、列顺序、单元格值。不会按 DOI 合并不同 UT，不新增项目字段。
-- 不引入 TXT 的续行；原生字段本身有换行时保留，在来源文件中记录。未自动删除参考文献或地址分隔。
+```sh
+npm start -- --help
+```
 
-## 输出
+</details>
 
-- `raw/<集合>/`：网页原生批次和任务清单。
-- `WoS-native-merged.xlsx`：原生字段合并去重表。
-- `set-membership.csv`：UT对应所有命中集合，分类不混入原生字段。
-- `searches.json`：实际执行的完整检索配置。
-- `status.json`：已完成数量与最终结果。
-- `WoS-native-merged.sources.json`：每条记录的批次来源、重复记录差异、原始换行位置。
-- 仅失败时生成 `last-page.png`，供定位登录、验证或页面改版问题。分享前确认截图内容。
+## Resume & human handoff
 
-新任务使用新输出目录，不覆盖已有交付。续传会重新读取已下载文件，检出缺失、条数错误或字段不一致就停止。未完成集合只在原结果URL仍有效、总数未变化时续传；会话过期时应换新输出目录重跑，避免混合新旧排序批次。
+```sh
+npm start -- --config examples/wearsteel.json --out output/wearsteel-001 --resume
+```
 
-## 测试
+- **Completed sets:** saved files are rechecked and skipped, not downloaded again.
+- **Incomplete sets:** resume uses the original result URL only while that session remains valid and the result count is unchanged.
+- **Expired or changed results:** start a new collection in a new directory rather than mixing old and new batches.
+- **Login or verification:** in interactive terminal mode, finish the requested action in the browser, press Enter in the terminal, then rerun with `--resume`. Verification is handled by the user.
+
+The default browser profile is stored outside the repository at `~/.local/share/wos-native-exporter/profile`. It does not copy cookies from your everyday Chrome profile. Keep this directory private and do not run two instances against the same profile.
+
+<details>
+<summary><strong>What happens on a website error?</strong></summary>
+
+- An explicit 502/503/504 error on the advanced-search page triggers at most two delayed page reloads.
+- If the custom field menu fails to load, the original results page is reloaded once **before any download is initiated**.
+- Other failures pause the task and preserve saved batches. A screenshot is attempted for diagnosis when the page remains available.
+- Login and verification are not handled through blind retries. With `--non-interactive`, the program saves progress and exits instead of waiting for input.
+
+</details>
+
+## Outputs
+
+| File or directory | Contents |
+| :--- | :--- |
+| `WoS-native-merged.xlsx` | One workbook with native fields, deduplicated by exact UT |
+| `raw/<set>/` | Untouched native Excel batches and their manifest |
+| `set-membership.csv` | Each UT linked to all search sets in which it appeared |
+| `searches.json` | The complete configuration used for the run |
+| `status.json` | Per-set progress and the final summary |
+| `WoS-native-merged.sources.json` | Source files and rows, duplicate-field differences, and line-break details |
+| `last-page.png` | Diagnostic screenshot, when a failure can be captured |
+
+If every query returns zero results, the task records the outcome without creating an empty merged workbook.
+
+### Data preservation rules
+
+**Original files stay original.** The merged workbook preserves native column names, column order, values, numeric types, and hyperlinks. It is a derived workbook—not a single WoS download—and does not promise identical visual styling.
+
+**Deduplication is by exact UT.** When the same UT appears in multiple sets, the first complete record is retained. Values from different records are not spliced together; different UTs are not collapsed merely because their DOIs match.
+
+**No TXT wrapping is introduced.** Native line breaks remain intact, including meaningful separators in references or addresses. The standard collection command does not flatten prose or silently truncate long fields.
+
+## Verified workflow
+
+A real collection run on **September 10, 2026**, used Playwright **1.63.0** and its Chromium **153.0.8010.12** browser.
+
+| Search sets | Native batches | Exported rows | Unique UTs | Native fields |
+| :---: | :---: | :---: | :---: | :---: |
+| **9** | **8** | **2,267** | **2,103** | **72** |
+
+The dataset includes material, thematic, platform-method, and related-alloy sets; the total is not a count of core wear-resistant steel papers alone. This run found **164 cross-set duplicates**, **zero conflicting fields** for duplicate UTs, and **zero CR/LF cells**. These are recorded results, not fixed values for future searches.
+
+A separate live test interrupted an 11-record set after records **1–6**. Resume downloaded only **7–11**, leaving the first batch unchanged.
+
+See the [English test record](docs/LIVE_TEST.en.md) or [中文实测记录](docs/LIVE_TEST.md).
+
+### Local tests
 
 ```sh
 npm test
 ```
 
-本地测试包括实际 Chromium 的控件操作和二进制下载、每批字段重选、最后不足一批、合并、缺失文件、重复UT、表头变化、HTML错误响应及零结果区分。真实WoS实测结果见 [真实WoS实测记录](docs/LIVE_TEST.md)，与本地模拟测试明确区分。
+Six targeted tests cover configuration, counts, incomplete fields, invalid downloads, missing or overlapping batches, browser field selection and reloads, native download preservation, merging, and completed-run reuse. They use local browser fixtures and **do not query WoS**.
 
-## 项目结构
+## Project map
 
 ```text
-src/          检索与网页操作、Excel校验、合并去重
-examples/     可复用检索配置
-tests/        本地浏览器及数据处理测试（不访问WoS）
-vendor/       SheetJS及其Apache-2.0许可证
-docs/         真实WoS实测记录
+src/          Browser workflow, Excel validation, and merging
+examples/     Reusable search configurations
+tests/        Local browser and data-processing tests
+vendor/       SheetJS and its Apache-2.0 license
+docs/         Recorded live tests and editable visual assets
 ```
 
-## 数据与许可证
+## Access, privacy & licensing
 
-仓库不包含论文元数据、原始导出文件、Cookie、登录状态、运行日志或个人账户信息。运行结果默认写入已被Git忽略的 `output/` 目录；浏览器配置请保持在仓库之外。论文数据库的访问及导出须遵守订阅权限和相应服务条款。
+The repository does not contain paper metadata, downloaded batches, cookies, login state, or runtime logs. Store browser profiles outside the repository; the documented `output/` directory is ignored by Git. Review diagnostic screenshots before sharing them.
 
-本项目当前未授予开源许可证（`UNLICENSED`）。第三方SheetJS CE 0.20.3来自其官方发布包，其Apache-2.0许可证保留在 `vendor/LICENSE`；Playwright通过npm安装，遵循其自身许可证。
+Use the tool within your database access rights and the service's terms. This is an independent project, not an official Clarivate product.
+
+The project currently has **no open-source license** (`UNLICENSED`). SheetJS CE **0.20.3** retains its [Apache-2.0 license](vendor/LICENSE); Playwright is installed through npm under its own license.
+
+---
+
+<p align="center">
+  <strong>Keep the native record. Make the workflow repeatable.</strong><br>
+  <a href="README.zh-CN.md">阅读中文版 →</a>
+</p>

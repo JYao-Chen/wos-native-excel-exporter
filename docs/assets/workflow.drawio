@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="drawio" version="31.1.8">
+  <diagram name="en" id="en">
+    <mxGraphModel dx="1280" dy="500" grid="1" gridSize="10" page="1" pageWidth="1280" pageHeight="500" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="html=1;whiteSpace=wrap;rounded=0;arcSize=0;fillColor=#F7FAF9;strokeColor=none;strokeWidth=1;container=1;pointerEvents=0;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1280" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="From query to workbook." style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=30;fontColor=#203A42;fontStyle=1;" vertex="1" parent="2">
+          <mxGeometry x="40" y="30" width="1150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="Real browser actions. Original download files. Exact-UT deduplication." style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=17;fontColor=#57767D;fontStyle=0;" vertex="1" parent="2">
+          <mxGeometry x="40" y="80" width="1180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="01" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=15;fontColor=#57767D;fontStyle=1;" vertex="1" parent="2">
+          <mxGeometry x="40" y="127" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="" style="html=1;whiteSpace=wrap;rounded=1;arcSize=10;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1;container=1;pointerEvents=0;" vertex="1" parent="2">
+          <mxGeometry x="40" y="170" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Search configuration" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=20;fontColor=#203A42;fontStyle=1;" vertex="1" parent="6">
+          <mxGeometry x="15" y="22" width="180" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="Complete JSON queries" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=14;fontColor=#49636B;fontStyle=0;" vertex="1" parent="6">
+          <mxGeometry x="15" y="75" width="180" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="02" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=15;fontColor=#57767D;fontStyle=1;" vertex="1" parent="2">
+          <mxGeometry x="370" y="127" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="" style="html=1;whiteSpace=wrap;rounded=1;arcSize=10;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1;container=1;pointerEvents=0;" vertex="1" parent="2">
+          <mxGeometry x="370" y="170" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="WoS browser" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=20;fontColor=#203A42;fontStyle=1;" vertex="1" parent="10">
+          <mxGeometry x="15" y="22" width="180" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Reselect every field group" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=14;fontColor=#49636B;fontStyle=0;" vertex="1" parent="10">
+          <mxGeometry x="15" y="75" width="180" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="03" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=15;fontColor=#57767D;fontStyle=1;" vertex="1" parent="2">
+          <mxGeometry x="700" y="127" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="" style="html=1;whiteSpace=wrap;rounded=1;arcSize=10;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=1;container=1;pointerEvents=0;" vertex="1" parent="2">
+          <mxGeometry x="700" y="170" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="Native Excel batches" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=20;fontColor=#203A42;fontStyle=1;" vertex="1" parent="14">
+          <mxGeometry x="15" y="22" width="180" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Save original XLS / XLSX" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=14;fontColor=#49636B;fontStyle=0;" vertex="1" parent="14">
+          <mxGeometry x="15" y="75" width="180" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="04" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=15;fontColor=#57767D;fontStyle=1;" vertex="1" parent="2">
+          <mxGeometry x="1030" y="127" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="" style="html=1;whiteSpace=wrap;rounded=1;arcSize=10;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=1;container=1;pointerEvents=0;" vertex="1" parent="2">
+          <mxGeometry x="1030" y="170" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="Validate + merge" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=20;fontColor=#203A42;fontStyle=1;" vertex="1" parent="18">
+          <mxGeometry x="15" y="22" width="180" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="Deduplicate by exact UT" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=14;fontColor=#49636B;fontStyle=0;" vertex="1" parent="18">
+          <mxGeometry x="15" y="75" width="180" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="Run queries" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#76949C;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=14;fontColor=#45656F;labelBackgroundColor=#F7FAF9;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="6" target="10">
+          <mxGeometry relative="1" as="geometry" y="-18" />
+        </mxCell>
+        <mxCell id="22" value="Export → Excel" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#76949C;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=14;fontColor=#45656F;labelBackgroundColor=#F7FAF9;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="10" target="14">
+          <mxGeometry relative="1" as="geometry" y="-18" />
+        </mxCell>
+        <mxCell id="23" value="All sets complete" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#76949C;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=14;fontColor=#45656F;labelBackgroundColor=#F7FAF9;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="14" target="18">
+          <mxGeometry relative="1" as="geometry" y="-18" />
+        </mxCell>
+        <mxCell id="24" value="" style="html=1;whiteSpace=wrap;rounded=1;arcSize=10;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1;container=1;pointerEvents=0;" vertex="1" parent="2">
+          <mxGeometry x="370" y="380" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="Human handoff" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=center;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=19;fontColor=#203A42;fontStyle=1;" vertex="1" parent="24">
+          <mxGeometry x="10" y="8" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="Login / verification" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=center;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=14;fontColor=#49636B;fontStyle=0;" vertex="1" parent="24">
+          <mxGeometry x="10" y="42" width="190" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="Pause / continue" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#76949C;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=14;fontColor=#45656F;labelBackgroundColor=#F7FAF9;exitX=0.5;exitY=1;entryX=0.5;entryY=0;startArrow=block;startFill=1;dashed=1;" edge="1" parent="1" source="10" target="24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="Resume, without re-downloading." style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=21;fontColor=#203A42;fontStyle=1;" vertex="1" parent="2">
+          <mxGeometry x="700" y="372" width="500" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="Recheck saved batches; keep the same valid result session." style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=15;fontColor=#57767D;fontStyle=0;" vertex="1" parent="2">
+          <mxGeometry x="700" y="415" width="520" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="zh-CN" id="zh-CN">
+    <mxGraphModel dx="1280" dy="500" grid="1" gridSize="10" page="1" pageWidth="1280" pageHeight="500" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="" style="html=1;whiteSpace=wrap;rounded=0;arcSize=0;fillColor=#F7FAF9;strokeColor=none;strokeWidth=1;container=1;pointerEvents=0;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="1280" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="从检索式到一份工作簿。" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=30;fontColor=#203A42;fontStyle=1;" vertex="1" parent="2">
+          <mxGeometry x="40" y="30" width="1150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4" value="通过真实网页导出，保留原始批次，按 UT 合并。" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=17;fontColor=#57767D;fontStyle=0;" vertex="1" parent="2">
+          <mxGeometry x="40" y="80" width="1180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="01" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=15;fontColor=#57767D;fontStyle=1;" vertex="1" parent="2">
+          <mxGeometry x="40" y="127" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="" style="html=1;whiteSpace=wrap;rounded=1;arcSize=10;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1;container=1;pointerEvents=0;" vertex="1" parent="2">
+          <mxGeometry x="40" y="170" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="检索配置" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=20;fontColor=#203A42;fontStyle=1;" vertex="1" parent="6">
+          <mxGeometry x="15" y="22" width="180" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="完整 JSON 检索式" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=14;fontColor=#49636B;fontStyle=0;" vertex="1" parent="6">
+          <mxGeometry x="15" y="75" width="180" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="9" value="02" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=15;fontColor=#57767D;fontStyle=1;" vertex="1" parent="2">
+          <mxGeometry x="370" y="127" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="" style="html=1;whiteSpace=wrap;rounded=1;arcSize=10;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1;container=1;pointerEvents=0;" vertex="1" parent="2">
+          <mxGeometry x="370" y="170" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="WoS 浏览器" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=20;fontColor=#203A42;fontStyle=1;" vertex="1" parent="10">
+          <mxGeometry x="15" y="22" width="180" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="每批重新全选字段" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=14;fontColor=#49636B;fontStyle=0;" vertex="1" parent="10">
+          <mxGeometry x="15" y="75" width="180" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="03" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=15;fontColor=#57767D;fontStyle=1;" vertex="1" parent="2">
+          <mxGeometry x="700" y="127" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="" style="html=1;whiteSpace=wrap;rounded=1;arcSize=10;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=1;container=1;pointerEvents=0;" vertex="1" parent="2">
+          <mxGeometry x="700" y="170" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="原生 Excel 批次" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=20;fontColor=#203A42;fontStyle=1;" vertex="1" parent="14">
+          <mxGeometry x="15" y="22" width="180" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="保存原始下载文件" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=14;fontColor=#49636B;fontStyle=0;" vertex="1" parent="14">
+          <mxGeometry x="15" y="75" width="180" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="17" value="04" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=15;fontColor=#57767D;fontStyle=1;" vertex="1" parent="2">
+          <mxGeometry x="1030" y="127" width="200" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="18" value="" style="html=1;whiteSpace=wrap;rounded=1;arcSize=10;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=1;container=1;pointerEvents=0;" vertex="1" parent="2">
+          <mxGeometry x="1030" y="170" width="210" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="19" value="核对并合并" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=20;fontColor=#203A42;fontStyle=1;" vertex="1" parent="18">
+          <mxGeometry x="15" y="22" width="180" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="20" value="按完全相同 UT 去重" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=14;fontColor=#49636B;fontStyle=0;" vertex="1" parent="18">
+          <mxGeometry x="15" y="75" width="180" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="21" value="执行检索" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#76949C;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=14;fontColor=#45656F;labelBackgroundColor=#F7FAF9;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="6" target="10">
+          <mxGeometry relative="1" as="geometry" y="-18" />
+        </mxCell>
+        <mxCell id="22" value="Export → Excel" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#76949C;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=14;fontColor=#45656F;labelBackgroundColor=#F7FAF9;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="10" target="14">
+          <mxGeometry relative="1" as="geometry" y="-18" />
+        </mxCell>
+        <mxCell id="23" value="完整后合并" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#76949C;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=14;fontColor=#45656F;labelBackgroundColor=#F7FAF9;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="14" target="18">
+          <mxGeometry relative="1" as="geometry" y="-18" />
+        </mxCell>
+        <mxCell id="24" value="" style="html=1;whiteSpace=wrap;rounded=1;arcSize=10;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=1;container=1;pointerEvents=0;" vertex="1" parent="2">
+          <mxGeometry x="370" y="380" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="25" value="人工接管" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=center;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=19;fontColor=#203A42;fontStyle=1;" vertex="1" parent="24">
+          <mxGeometry x="10" y="8" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="26" value="登录 / 验证" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=center;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=14;fontColor=#49636B;fontStyle=0;" vertex="1" parent="24">
+          <mxGeometry x="10" y="42" width="190" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="27" value="暂停 / 继续" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#76949C;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Helvetica;fontSize=14;fontColor=#45656F;labelBackgroundColor=#F7FAF9;exitX=0.5;exitY=1;entryX=0.5;entryY=0;startArrow=block;startFill=1;dashed=1;" edge="1" parent="1" source="10" target="24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="28" value="续传，不重复下载。" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=21;fontColor=#203A42;fontStyle=1;" vertex="1" parent="2">
+          <mxGeometry x="700" y="372" width="500" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="29" value="核对已保存批次；原会话必须仍然有效。" style="html=1;whiteSpace=wrap;text;fillColor=none;strokeColor=none;align=left;verticalAlign=middle;spacing=0;fontFamily=Helvetica;fontSize=15;fontColor=#57767D;fontStyle=0;" vertex="1" parent="2">
+          <mxGeometry x="700" y="415" width="520" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
