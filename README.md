@@ -37,7 +37,7 @@ No GPT session, userscript, internal API replay, or TXT-to-Excel conversion is i
 
 **Requirements:** Node.js **22+**, the Playwright-managed Chromium browser, a desktop session, and access to **Web of Science Core Collection** through your subscription or institution.
 
-The website must use its **English interface**. The documentation is bilingual; terminal messages are currently in Chinese. The repository is private, so cloning requires repository access.
+The website must use its **English interface**. The documentation is bilingual; terminal messages are currently in Chinese. The repository is public and can be cloned directly.
 
 ### 1. Install
 
@@ -206,7 +206,9 @@ The repository does not contain paper metadata, downloaded batches, cookies, log
 
 Use the tool within your database access rights and the service's terms. This is an independent project, not an official Clarivate product.
 
-The project currently has **no open-source license** (`UNLICENSED`). SheetJS CE **0.20.3** retains its [Apache-2.0 license](vendor/LICENSE); Playwright is installed through npm under its own license.
+This project is open source under the [MIT License](LICENSE). SheetJS CE **0.20.3** retains its [Apache-2.0 license](vendor/LICENSE); Playwright is installed through npm under its own license.
+
+The `private: true` setting in `package.json` prevents accidental npm publishing; it does not restrict GitHub access or the MIT license.
 
 ---
 

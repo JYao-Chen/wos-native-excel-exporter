@@ -14,7 +14,7 @@
   "dependencies": {
     "playwright": "1.63.0"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/JYao-Chen/wos-native-excel-exporter.git"

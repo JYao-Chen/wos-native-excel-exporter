@@ -37,7 +37,7 @@
 
 **运行条件：** Node.js **22+**、Playwright 配套 Chromium、桌面环境，以及通过个人订阅或机构获得的 **Web of Science Core Collection** 访问权限。
 
-WoS 页面需使用**英文界面**。项目文档提供中英文版本，终端提示目前为中文。当前仓库为私有仓库，克隆时需具备仓库访问权限。
+WoS 页面需使用**英文界面**。项目文档提供中英文版本，终端提示目前为中文。仓库已公开，可直接克隆。
 
 ### 1. 安装
 
@@ -206,7 +206,9 @@ docs/         真实实测记录与可编辑图形资源
 
 使用时遵守数据库访问权限及服务条款。本项目为独立工具，并非 Clarivate 官方产品。
 
-项目目前**尚未授予开源许可证**（`UNLICENSED`）。SheetJS CE **0.20.3** 保留其 [Apache-2.0 许可证](vendor/LICENSE)；Playwright 通过 npm 安装，遵循其自身许可证。
+项目采用 [MIT 开源许可证](LICENSE)。SheetJS CE **0.20.3** 保留其 [Apache-2.0 许可证](vendor/LICENSE)；Playwright 通过 npm 安装，遵循其自身许可证。
+
+`package.json` 中保留的 `private: true` 仅用于防止误发布到 npm，不影响 GitHub 公开访问或 MIT 开源许可。
 
 ---
 
