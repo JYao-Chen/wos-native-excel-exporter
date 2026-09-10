@@ -1,0 +1,22 @@
+{
+  "name": "wos-native-excel-exporter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WoS native Excel export through visible Playwright browser UI",
+  "main": "src/export.cjs",
+  "scripts": {
+    "start": "node src/export.cjs",
+    "test": "node --test tests/*.test.cjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "playwright": "1.63.0"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JYao-Chen/wos-native-excel-exporter.git"
+  }
+}
